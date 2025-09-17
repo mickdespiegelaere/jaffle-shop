@@ -6,7 +6,6 @@ order_items as (
 
 ),
 
-
 orders as (
 
     select * from {{ ref('stg_orders') }}
@@ -51,7 +50,6 @@ joined as (
         products.is_drink_item,
 
         order_supplies_summary.supply_cost
-
     from order_items
 
     left join orders on order_items.order_id = orders.order_id
